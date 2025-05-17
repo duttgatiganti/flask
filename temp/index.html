@@ -1,0 +1,30 @@
+{% extends "b.html" %}
+
+{% block title %} Index {% endblock %}
+
+{% block content %}
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+<p>{{ v }}</p>
+<p>{{ v|upper }}</p>
+<p>{{ v|lower }}</p>
+<p>{{ v|title }}</p>
+<p>{{ v|reverse_string }}</p>
+
+<p>{{ v2 }}</p>
+<p>{{ l }}</p>
+<ul>
+    {% for l in l %}
+
+    <li {% if l == 3 %}style="colour: red"{% endif %}> {{ l }}</li>
+        
+    {% endfor %}
+</ul>
+  <form method="POST" action="{{ url_for('index') }}">
+    <input type="text" name="username" placeholder="Username"><br>
+    <input type="password" name="password" placeholder="Password"><br>
+    <input type="submit" value="Login">
+  </form>
+
+{% endblock %}
+
